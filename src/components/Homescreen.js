@@ -5,7 +5,7 @@ import NoteList from "./NoteList";
 const Homescreen = () => {
     return (
         <Grid container spacing={2} diplay="flex" justifyContent="center" alignItems="center">
-            <Grid xs={12} md={6} style={{borderStyle:"2 px solid red"}}>
+            <Grid xs={12} md={6}>
                 <NoteList />
             </Grid>
         </Grid>
