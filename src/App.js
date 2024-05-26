@@ -4,12 +4,28 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './App.css';
 
+import {ThemeProvider, createTheme} from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+import Homescreen from "./components/Homescreen";
+
+
+const darkTheme = createTheme({
+    palette: {
+        mode: 'dark',
+    },
+});
+
 function App() {
-  return (
-    <div className="App">
-      App
-    </div>
-  );
+    return (
+        <ThemeProvider theme={darkTheme}>
+            <CssBaseline>
+                <div className="App">
+                    <Homescreen/>
+                </div>
+            </CssBaseline>
+        </ThemeProvider>
+    );
 }
 
 export default App;
