@@ -4,7 +4,7 @@ import NoteListItem from "./NoteListItem";
 
 const NoteList = ({notes}) => {
     return (
-        <Stack spacing={2} className="note-list">
+        <Stack spacing={2} className="note-list" paddingTop={2}>
             {notes.map(note => (
                     <NoteListItem key={note.id} note={note}/>
                 )
