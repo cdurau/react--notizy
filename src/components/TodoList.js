@@ -6,7 +6,7 @@ export const TodoList = ({todos}) => {
         <>
             <Stack textAlign={'center'} my={1} spacing={2}>
                 {todos.map((todo)=>
-                    <TodoItem title={todo.title}/>
+                    <TodoItem key={todo.id} title={todo.title}/>
                 )}
             </Stack>
         </>
