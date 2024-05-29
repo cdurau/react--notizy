@@ -3,7 +3,7 @@ import {Header} from './components/Header'
 import {TodoList} from './components/TodoList'
 import {ThemeProvider, createTheme} from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-import {Container} from '@mui/material'
+import {Container, unstable_ClassNameGenerator} from '@mui/material'
 import {useEffect, useState} from 'react'
 
 const darkTheme = createTheme({
@@ -14,6 +14,13 @@ const darkTheme = createTheme({
 
 function App() {
     const [todos, setTodos] = useState([])
+
+    const addTodo = () => {
+        const newId = todos.reduce((max, todo) => (todo.id > max ? todo.id : max), -Infinity) + 1
+
+        setTodos(prevTodos => [...prevTodos, {'id': newId, 'title': `Item ${newId}`, 'completed': false}])
+        console.log("Add Todo ...")
+    }
 
     useEffect(() => {
         fetch('data/todos.json')
@@ -26,8 +33,8 @@ function App() {
             <CssBaseline />
             <div className="App">
                 <Container maxWidth="sm">
-                    <Header />
-                    <TodoList todos={todos}/>
+                    <Header addTodo={addTodo} />
+                    <TodoList todos={todos} />
                 </Container>
 
             </div>
