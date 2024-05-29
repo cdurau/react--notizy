@@ -13,7 +13,7 @@ export const TodoItem = ({todo, setCompletedStatus}) => {
                 }}
                 control={<Checkbox checked={todo.completed} onChange={() => setCompletedStatus(todo)}
                                    sx={{position: 'absolute', left: 0, marginLeft: '0.6rem',}} />}
-                label={<div>{todo.title}</div>}
+                label={<div style={{textDecoration: todo.completed ? 'line-through' : 'none'}}>{todo.title}</div>}
             />
         </Box>
     )
