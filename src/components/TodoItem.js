@@ -1,6 +1,6 @@
 import {Box, Checkbox, FormControlLabel, FormGroup} from '@mui/material'
 
-export const TodoItem = ({todo}) => {
+export const TodoItem = ({todo, setCompletedStatus}) => {
     return (
         <Box>
             <FormControlLabel
@@ -11,7 +11,8 @@ export const TodoItem = ({todo}) => {
                     position: 'relative',
                     padding: '0 0.6rem'
                 }}
-                control={<Checkbox checked={todo.completed} sx={{position: 'absolute', left: 0, marginLeft: "0.6rem",}} />}
+                control={<Checkbox checked={todo.completed} onChange={() => setCompletedStatus(todo)}
+                                   sx={{position: 'absolute', left: 0, marginLeft: '0.6rem',}} />}
                 label={<div>{todo.title}</div>}
             />
         </Box>

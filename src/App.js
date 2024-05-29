@@ -26,6 +26,13 @@ function App() {
         document.getElementById('input-new-todo').value = ''
     }
 
+    const setCompletedStatus = (item) => {
+        setTodos(prevTodos => prevTodos.map(todo => {
+            // Toggle Todo Completed
+            return todo.id === item.id ? {'id': todo.id, 'title': todo.title, 'completed': !todo.completed} : todo
+        }))
+    }
+
     useEffect(() => {
         fetch('data/todos.json')
             .then(response => response.json())
@@ -38,7 +45,7 @@ function App() {
             <div className="App">
                 <Container maxWidth="sm">
                     <Header addTodo={addTodo} />
-                    <TodoList todos={todos} />
+                    <TodoList todos={todos} setCompletedStatus={setCompletedStatus} />
                 </Container>
 
             </div>

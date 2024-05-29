@@ -1,7 +1,7 @@
 import {Box, Stack, TextField} from '@mui/material'
 import {TodoItem} from './TodoItem'
 
-export const TodoList = ({todos}) => {
+export const TodoList = ({todos, setCompletedStatus}) => {
     return (
         <>
             <Stack textAlign={'center'} my={1} spacing={2}>
@@ -9,7 +9,7 @@ export const TodoList = ({todos}) => {
                     <TextField id="input-new-todo" label="Neuer Eintrag..." variant="standard" />
                 </Box>
                 {todos.map((todo)=>
-                    <TodoItem key={todo.id} todo={todo}/>
+                    <TodoItem key={todo.id} todo={todo} setCompletedStatus={setCompletedStatus}/>
                 )}
             </Stack>
         </>
