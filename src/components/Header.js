@@ -1,6 +1,6 @@
-import {AppBar, IconButton, Toolbar, Typography} from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import {Menu} from '@mui/icons-material';
+import {AppBar, IconButton, Toolbar, Typography} from '@mui/material'
+import AddIcon from '@mui/icons-material/Add'
+import {Menu} from '@mui/icons-material'
 
 export const Header = () => {
     return (
@@ -24,5 +24,5 @@ export const Header = () => {
 
         </>
 
-    );
-};
+    )
+}
