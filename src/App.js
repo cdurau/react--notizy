@@ -1,14 +1,9 @@
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
 import './App.css';
-
+import {Header} from './components/Header';
+import {TodoList} from './components/TodoList';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
-import Homescreen from "./components/Homescreen";
-
+import {Container} from '@mui/material';
 
 const darkTheme = createTheme({
     palette: {
@@ -19,11 +14,14 @@ const darkTheme = createTheme({
 function App() {
     return (
         <ThemeProvider theme={darkTheme}>
-            <CssBaseline>
-                <div className="App">
-                    <Homescreen/>
-                </div>
-            </CssBaseline>
+            <CssBaseline />
+            <div className="App">
+                <Container maxWidth="sm">
+                    <Header />
+                    <TodoList />
+                </Container>
+
+            </div>
         </ThemeProvider>
     );
 }
