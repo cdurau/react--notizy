@@ -16,10 +16,14 @@ function App() {
     const [todos, setTodos] = useState([])
 
     const addTodo = (newTodoTitle) => {
+        // Get new id for todo list
         const newId = todos.reduce((max, todo) => (todo.id > max ? todo.id : max), -Infinity) + 1
 
-        // {'id': newId, 'title': `Item ${newId}`, 'completed': false}
+        // Add new todo
         setTodos(prevTodos => [...prevTodos, {'id': newId, 'title': newTodoTitle, 'completed': false}])
+
+        // Clear input field after adding new todo
+        document.getElementById('input-new-todo').value = ''
     }
 
     useEffect(() => {
