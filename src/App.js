@@ -20,7 +20,6 @@ function App() {
 
         // {'id': newId, 'title': `Item ${newId}`, 'completed': false}
         setTodos(prevTodos => [...prevTodos, {'id': newId, 'title': newTodoTitle, 'completed': false}])
-        console.log("Add Todo ...")
     }
 
     useEffect(() => {

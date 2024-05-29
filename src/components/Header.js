@@ -3,6 +3,14 @@ import AddIcon from '@mui/icons-material/Add'
 import {Menu} from '@mui/icons-material'
 
 export const Header = ({addTodo}) => {
+    const addNewTodo = () => {
+        const title = document.getElementById('input-new-todo').value
+        // check if title is empty
+        if (title != '') {
+            addTodo(title)
+        }
+    }
+
     return (
         <>
             <AppBar position="static">
@@ -18,7 +26,7 @@ export const Header = ({addTodo}) => {
                     <Typography textAlign={'center'} variant="h6" component="div" sx={{flexGrow: 1}}>
                         Todo
                     </Typography>
-                    <IconButton color="inherit" onClick={() => addTodo(document.getElementById("input-new-todo").value)}><AddIcon /></IconButton>
+                    <IconButton color="inherit" onClick={addNewTodo}><AddIcon /></IconButton>
                 </Toolbar>
             </AppBar>
 
