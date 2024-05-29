@@ -15,10 +15,11 @@ const darkTheme = createTheme({
 function App() {
     const [todos, setTodos] = useState([])
 
-    const addTodo = () => {
+    const addTodo = (newTodoTitle) => {
         const newId = todos.reduce((max, todo) => (todo.id > max ? todo.id : max), -Infinity) + 1
 
-        setTodos(prevTodos => [...prevTodos, {'id': newId, 'title': `Item ${newId}`, 'completed': false}])
+        // {'id': newId, 'title': `Item ${newId}`, 'completed': false}
+        setTodos(prevTodos => [...prevTodos, {'id': newId, 'title': newTodoTitle, 'completed': false}])
         console.log("Add Todo ...")
     }
 

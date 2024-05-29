@@ -18,7 +18,7 @@ export const Header = ({addTodo}) => {
                     <Typography textAlign={'center'} variant="h6" component="div" sx={{flexGrow: 1}}>
                         Todo
                     </Typography>
-                    <IconButton color="inherit" onClick={addTodo}><AddIcon /></IconButton>
+                    <IconButton color="inherit" onClick={() => addTodo(document.getElementById("input-new-todo").value)}><AddIcon /></IconButton>
                 </Toolbar>
             </AppBar>
 
